@@ -20,3 +20,5 @@ class TestKayaEquation(object):
         assert kaya_equation(2, 3, 4, 5) == pytest.approx(120)
         assert isinstance(kaya_equation(2.2, 3.3, 4.4, 5.5), float)
         assert kaya_equation(2.2, 3.3, 4.4, 5.5) == pytest.approx(175.692)
+        with pytest.raises(Exception):
+            kaya_equation(-2, 3, 4, 5)
