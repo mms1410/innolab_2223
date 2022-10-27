@@ -12,6 +12,7 @@ def kaya_equation(pop, gdp, enInt, carbInt, output_type="CO2"):
     Calculate yearly CO2 emission via Kaya Equation.
     Here is an interesting wikipedia link:
     https://en.wikipedia.org/wiki/Kaya_identity
+
     Parameters
     ----------
     pop
