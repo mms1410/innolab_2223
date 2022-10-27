@@ -7,7 +7,7 @@ Created on Thu Oct 27 09:27:53 2022
 """
 
 
-def kaya_equation(pop, gdp, enInt, carbInt):
+def kaya_equation(pop, gdp, enInt, carbInt, output_type="CO2"):
     """
     Calculate yearly CO2 emission via Kaya Equation.
 
@@ -27,6 +27,8 @@ def kaya_equation(pop, gdp, enInt, carbInt):
     numeric
         Yearly CO2 emission according to Kaya Equation
     """
+    assert isinstance(output_type, str)
+    assert output_type == "CO2" | output_type == "C"
     assert isinstance(pop, (int, float))
     assert isinstance(gdp, (int, float))
     assert isinstance(enInt, (int, float))
@@ -36,4 +38,7 @@ def kaya_equation(pop, gdp, enInt, carbInt):
     assert enInt >= 0, "Energ Intensity must be a non-negative number!"
     assert carbInt >= 0, "Carbon Intensity must be a non-negative number!"
 
-    return(pop * gdp * enInt * carbInt)
+    co2 = pop * gdp * enInt * carbInt
+    if output_type == "C":
+        co2 = co2 / 3.67
+    return(co2)
