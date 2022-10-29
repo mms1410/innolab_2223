@@ -30,7 +30,7 @@ def kaya_equation(pop, gdp, enInt, carbInt, output_type="CO2"):
         Yearly CO2 emission according to Kaya Equation
     """
     assert isinstance(output_type, str)
-    assert output_type == "CO2" | output_type == "C"
+    assert output_type == "CO2" or output_type == "C"
     assert isinstance(pop, (int, float))
     assert isinstance(gdp, (int, float))
     assert isinstance(enInt, (int, float))
