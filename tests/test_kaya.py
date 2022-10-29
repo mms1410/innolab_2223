@@ -22,4 +22,4 @@ class TestKayaEquation(object):
         assert kaya_equation(2.2, 3.3, 4.4, 5.5) == pytest.approx(175.692)
         with pytest.raises(Exception):
             kaya_equation(-2, 3, 4, 5)
-        assert kaya_equation(2, 3, 4, 4, "C") == pytest.approx(32/3.67)
+        assert kaya_equation(2, 3, 4, 5, "C") == pytest.approx(120/3.67)
